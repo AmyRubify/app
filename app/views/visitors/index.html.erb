@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript">
-      function about() {
-        alert("Hello World!");
+    <script>
+      function myFunction()
+      {
+        var f = document.getElementById("fname").value;
+        var l = document.getElementById("lname").value;
+        if (f == "" || l == "")
+        {
+          alert("Please fill your Fname & Lname !");
+        }
+        else
+        {
+          alert("Hello " + f + '' + l);
+        }
       }
     </script>
   </head>
   <body>
     <h3>Hello</h3>
-    <h1><a href="rails/info/properties" onclick = "about()">Home</a></h1>
+    <form action="demo_form.asp">
+      First name: <input id="fname" type="text" name="fname"></br>
+      Last name: <input id="lname" type="text" name="lname"></br>
+      <a href="/" onclick= "myFunction()">Sumit</a>
+    </form>
+    <h3><%= Date.today %></h3>
   </body>
 </html>
 
