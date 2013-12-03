@@ -1,0 +1,18 @@
+<h1>List books</h1>
+<a href = "books/new">New book</a>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <% @books.each do |book|%>
+  <tr>
+    <td><%= book.name %></td>
+    <td><%= book.description %></td>
+    <td><%= link_to "Show", book %></td>
+    <td><%= link_to 'Edit', edit_book_path(book) %></td>
+    <td><%= link_to 'Destroy', book, :method =>:delete,
+                                     :confirm => "Are you sure delete #{book.name}?" %></td>
+  </tr>
+  <% end %>
+</table>
